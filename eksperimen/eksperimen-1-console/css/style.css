@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+  padding: 20px;
+}
+
+.container {
+  width: min(90%, 720px);
+  margin-inline: auto;
+  padding-block: 64px;
+}
+
+.praktikum-card {
+  padding: 32px;
+  border: 2px solid #d1d5db;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.label {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+h1 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.info-box {
+  margin-top: 24px;
+  padding: 16px;
+  border-left: 4px solid #2563eb;
+  background: #eff6ff;
+  border-radius: 4px;
+}
