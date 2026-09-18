@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokakarya Web Dasar 2026 - D3 Teknik Informatika</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a class="brand" href="#">Lokakarya Web</a>
+
+            <nav id="nav-menu" class="nav-menu" aria-label="Navigasi Utama">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li><a class="nav-link" href="#fitur">Materi</a></li>
+                    <li><a class="nav-link" href="#sesi">Sesi</a></li>
+                    <li><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li><a class="nav-link" href="#daftar">Pendaftaran</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="btn-tema" class="btn-tema" type="button" aria-label="Ganti tema warna" aria-pressed="false">🌙</button>
+                <button id="btn-nav-toggle" class="btn-nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu navigasi">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-wrapper">
+                <div class="hero-content">
+                    <h1>Belajar Fondasi Web Lebih Terarah</h1>
+                    <p class="hero-sub">Pahami struktur HTML semantik, tata letak Flexbox, dan styling CSS murni tanpa terburu-buru bergantung pada framework.</p>
+                    <a class="button button--large" href="#daftar">Daftar Sekarang</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="section-padding">
+            <div class="container">
+                <h2>Tentang Kegiatan</h2>
+                <div class="about-grid">
+                    <img class="responsive-img" src="assets/lokakarya-web.jpg" alt="Mahasiswa berdiskusi di depan komputer saat lokakarya web dasar">
+                    <div class="about-text">
+                        <p>Kegiatan ini diadakan untuk memperkuat dasar pemahaman web bagi mahasiswa baru D3 Teknik Informatika sebelum melangkah ke pembuatan aplikasi yang lebih rumit.</p>
+                        <p>Fokus pembahasannya mencakup struktur dokumen yang semantik, kalkulasi box model yang tepat, serta penataan layout adaptif menggunakan Flexbox murni.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fitur" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="text-center">Materi Utama</h2>
+                <div class="filter-wrapper">
+                    <button class="filter-btn active" type="button" data-filter="semua">Semua</button>
+                    <button class="filter-btn" type="button" data-filter="html">HTML</button>
+                    <button class="filter-btn" type="button" data-filter="css">CSS</button>
+                    <button class="filter-btn" type="button" data-filter="layout">Layout</button>
+                </div>
+                <div id="materi-container" class="feature-list"></div>
+                <p id="materi-kosong" class="text-center empty-msg" hidden>Materi tidak ditemukan untuk kategori ini.</p>
+            </div>
+        </section>
+
+        <section id="sesi" class="section-padding">
+            <div class="container">
+                <h2 class="text-center">Pilihan Sesi Lokakarya</h2>
+                <div class="pricing-list">
+                    <article class="price-card">
+                        <h3>Teori & Konsep</h3>
+                        <p class="price">Sesi 1</p>
+                        <ul>
+                            <li>Pengenalan anatomi HTML</li>
+                            <li>Pemilihan tag semantik</li>
+                            <li>Dasar aksesibilitas web</li>
+                        </ul>
+                        <a class="button" href="#daftar">Pilih Sesi Ini</a>
+                    </article>
+
+                    <article class="price-card price-card--featured">
+                        <p class="badge">Paling Diminati</p>
+                        <h3>Hands-on & Lab</h3>
+                        <p class="price">Sesi 2</p>
+                        <ul>
+                            <li>Praktik CSS Box Model</li>
+                            <li>Menyusun Flexbox responsif</li>
+                            <li>Simulasi layar mobile 320px</li>
+                        </ul>
+                        <a class="button" href="#daftar">Pilih Sesi Ini</a>
+                    </article>
+
+                    <article class="price-card">
+                        <h3>Mentoring</h3>
+                        <p class="price">Sesi 3</p>
+                        <ul>
+                            <li>Review kode bersama</li>
+                            <li>Troubleshooting kendala koding</li>
+                            <li>Persiapan deploy portofolio</li>
+                        </ul>
+                        <a class="button" href="#daftar">Pilih Sesi Ini</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-ans-1">
+                            Siapa saja yang dapat mengikuti kegiatan lokakarya ini?
+                        </button>
+                        <div id="faq-ans-1" class="faq-answer" hidden>
+                            <p>Kegiatan ini terbuka bagi seluruh mahasiswa D3 Teknik Informatika yang ingin mengasah dan memantapkan keterampilan dasar web murni.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-ans-2">
+                            Apakah peserta perlu membawa laptop sendiri?
+                        </button>
+                        <div id="faq-ans-2" class="faq-answer" hidden>
+                            <p>Ya, setiap peserta diharapkan membawa laptop pribadi yang telah terpasang web browser modern dan text editor seperti VS Code.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-ans-3">
+                            Apakah kegiatan ini dipungut biaya pendaftaran?
+                        </button>
+                        <div id="faq-ans-3" class="faq-answer" hidden>
+                            <p>Lokakarya ini diselenggarakan secara gratis sebagai bagian dari inisiatif belajar sebaya mahasiswa D3 Teknik Informatika.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="daftar" class="section-padding">
+            <div class="container">
+                <h2 class="text-center">Pendaftaran Peserta</h2>
+                <form id="form-daftar" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input id="nama" name="nama" type="text" placeholder="Masukkan nama Anda" aria-describedby="error-nama" required>
+                        <small id="error-nama" class="error-msg"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input id="email" name="email" type="email" placeholder="contoh@email.com" aria-describedby="error-email" required>
+                        <small id="error-email" class="error-msg"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sesi-pilihan">Pilihan Sesi</label>
+                        <select id="sesi-pilihan" name="sesi" aria-describedby="error-sesi" required>
+                            <option value="">-- Pilih Sesi Lokakarya --</option>
+                            <option value="Sesi 1: Teori & Konsep">Sesi 1: Teori & Konsep</option>
+                            <option value="Sesi 2: Hands-on & Lab">Sesi 2: Hands-on & Lab</option>
+                            <option value="Sesi 3: Mentoring">Sesi 3: Mentoring</option>
+                        </select>
+                        <small id="error-sesi" class="error-msg"></small>
+                    </div>
+
+                    <button class="button button--large button--full" type="submit">Kirim Pendaftaran</button>
+                    <div id="pesan-sukses" class="alert-success" hidden aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Program Studi D3 Teknik Informatika. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="btn-back-to-top" class="btn-back-to-top" type="button" aria-label="Kembali ke atas" hidden>↑</button>
+
+</body>
+</html>
