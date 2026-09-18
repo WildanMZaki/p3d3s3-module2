@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework - Interactive Profile Card</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <!-- Tombol Ganti Tema -->
+    <header class="card-toolbar">
+      <button id="btn-tema" type="button" aria-pressed="false">
+        <span id="label-tema">🌙 Mode Gelap</span>
+      </button>
+    </header>
+
+    <!-- Kartu Profil Utama -->
+    <article class="profile-card" aria-labelledby="profile-name">
+      <div id="status-profil" class="status-msg" data-state="idle" role="status" aria-live="polite">
+        Memuat profil mahasiswa...
+      </div>
+
+      <div class="profile-header">
+        <img id="profile-avatar" class="profile-avatar" src="" alt="Foto Profil Mahasiswa" hidden>
+        <div class="profile-title">
+          <h1 id="profile-name">Nama Mahasiswa</h1>
+          <p id="profile-nim" class="badge-nim">NIM</p>
+          <p id="profile-role" class="profile-role">Program Studi</p>
+        </div>
+      </div>
+
+      <!-- Tombol Toggle Detail Bio -->
+      <div class="profile-actions">
+        <button id="btn-toggle-detail" type="button" aria-expanded="false" aria-controls="profile-detail">
+          Lihat Bio Lengkap
+        </button>
+      </div>
+
+      <div id="profile-detail" class="profile-detail" hidden>
+        <h2>Tentang Saya</h2>
+        <p id="profile-bio"></p>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Bagian Keterampilan -->
+      <section class="skills-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Daftar Keterampilan</h2>
+
+        <div id="skills-list" class="skills-list" role="list"></div>
+        <p id="skills-empty-msg" class="empty-text" hidden>Belum ada keterampilan yang ditambahkan.</p>
+
+        <!-- Form Tambah Keterampilan -->
+        <form id="form-tambah-skill" class="form-skill" novalidate>
+          <label for="input-skill">Tambah keterampilan baru:</label>
+          <div class="form-row">
+            <input id="input-skill" type="text" placeholder="Contoh: TypeScript, Git" aria-describedby="error-skill">
+            <button type="submit" id="btn-tambah-skill">Tambah</button>
+          </div>
+          <small id="error-skill" class="error-text"></small>
+        </form>
+      </section>
+
+      <!-- Tombol Coba Lagi Saat Error -->
+      <div class="retry-wrapper">
+        <button id="btn-coba-lagi" type="button" class="btn-retry" hidden>Coba Lagi Memuat Profil</button>
+      </div>
+    </article>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

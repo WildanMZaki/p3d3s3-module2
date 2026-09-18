@@ -1,0 +1,11 @@
+{
+  "nama": "Wildan M Zaki",
+  "nim": "251511062",
+  "programStudi": "D3 Teknik Informatika",
+  "role": "Full Stack Developer & AI Enthusiast",
+  "bio": "Mahasiswa tingkat 2 D3 Teknik Komputer, selain itu juga profesional Fullstack Developer dari Madtive Studio, salah satu software house di Cianjur",
+  "avatar": "https://avatars.githubusercontent.com/u/106567925?v=4",
+  "keterampilan": [
+    "Nest.js", "Next.js", "Golang", "Docker", "Laravel", "MySQL, PostgreSQL", "MongoDB"
+  ]
+}
